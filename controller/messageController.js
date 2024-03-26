@@ -1,8 +1,13 @@
 const messageModule = require('../Module/messageModule');
-// const logger = require('./logger');
+const logger = require('./logger');
 
+let count = 0
 module.exports = {
     create: (req, res) => {
+        count++
+        if(count > 1){
+            logger.messageLogger.log('debug',count+' consecutive calls for create')
+        }
         const message = req.body;
         const { UID } = message;
         messageModule.messageCollection.find({ UID: UID})
@@ -87,6 +92,7 @@ module.exports = {
     },
 
     getMessage: (req,res)=> {
+        count = 0
         return messageModule
             .getMessage(req.body.UID)
             
