@@ -43,7 +43,7 @@ module.exports = {
                     .updateMessage(req.body.UID, fields)
         
                     .then((data) => {
-                        logger.messageLogger.log('info','User updated succesfully - ' + data)
+                        // logger.messageLogger.log('info','User updated succesfully - ' + data)
                         return res.send({ status: "updated"});
                     })
         
