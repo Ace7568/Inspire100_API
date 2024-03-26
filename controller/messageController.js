@@ -18,7 +18,7 @@ module.exports = {
                 .create(req.body)
 
                 .then((data) => {
-                    // logger.messageLogger.log('info','user created succefully - ' + data.UID)
+                    logger.messageLogger.log('info','user created succefully - ' + data.UID)
                     return res.send({
                         status: "ok",
                         // msg: "User is created",
