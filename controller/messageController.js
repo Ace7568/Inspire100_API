@@ -18,7 +18,7 @@ module.exports = {
                 .create(req.body)
 
                 .then((data) => {
-                    logger.messageLogger.log('info','user created succefully - ' + data.UID)
+                    // logger.messageLogger.log('info','user created succefully - ' + data.UID)
                     return res.send({
                         status: "ok",
                         // msg: "User is created",
@@ -43,8 +43,8 @@ module.exports = {
                     .updateMessage(req.body.UID, fields)
         
                     .then((data) => {
+                        logger.messageLogger.log('info','User updated succesfully - ' + data)
                         return res.send({ status: "updated"});
-                        // logger.messageLogger.log('info','User updated succesfully - ' + data);
                     })
         
                     .catch((err) =>{
