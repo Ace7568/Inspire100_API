@@ -13,7 +13,6 @@ module.exports = {
         messageModule.messageCollection.find({ UID: UID})
         .then((data) => {
             if (data.length == 0){
-                console.log(req.body)
                 return messageModule
                 .create(req.body)
 
@@ -34,7 +33,6 @@ module.exports = {
             else if(data.length == 1){
                 // return res.send({status: "fail - user already exist"});
                 // logger.messageLogger.log('debug','Update user invoked')
-                console.log(req.body)
                 const fields = {
                     content : req.body.content
                 }
@@ -97,7 +95,6 @@ module.exports = {
             .getMessage(req.body.UID)
             
             .then((data) => {
-                console.log(data)
                 if(data == null){
                     // logger.messageLogger.log('debug','UID not found - ' + req.body.UID)
                     return res.send({ status:"Not found", response: Date()}) 
