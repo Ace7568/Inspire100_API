@@ -56,7 +56,6 @@ module.exports = {
     },
 
     getAll: (req, res)=>{
-        console.log(req.body)
         return messageModule
             .getALL()
 
@@ -70,8 +69,6 @@ module.exports = {
     },
 
     updateMessage: (req, res) => {
-
-        console.log(req.body)
         
         const fields = {
             message : req.body.message
